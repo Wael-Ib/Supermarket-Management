@@ -1,10 +1,14 @@
-﻿@using WebApp.Models
-@model Category
+﻿@model Category
+@section title {
+	@if (Model != null)
+	{
+		<h3>Category: @Model.Name</h3>
+	}
 
-<html>
-<body>
-    <h3>Category: @Model.CategoryId</h3>
-    
+}
+@if (Model != null)
+{
 
-</body>
-</html>
+	<partial name="_Category" model="@Model" />
+}
+
